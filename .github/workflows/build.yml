@@ -1,54 +1,13 @@
-# .github/workflows/build.yml
+name: Build
 
-# 1. Define the workflow's name
-name: Kotlin CI
-
-# 2. Specify when to run the workflow
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
-# 3. Define environment variables for the runner
-env:
-  GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.parallel=true -Dorg.gradle.caching=true"
-
-# 4. Define the jobs that will run
 jobs:
-  build-and-test:
-    # Run on the latest Ubuntu runner
+  build:
     runs-on: ubuntu-latest
-
-    # The sequence of steps to execute
     steps:
-      # Step 1: Check out your code
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      # Step 2: Set up Java (using version 21)
-      - name: Set up JDK 21
-        uses: actions/setup-java@v4
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
-      # Step 3: Grant execute permission to the Gradle wrapper
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      # Step 4: Build the project
-      - name: Build with Gradle
-        run: ./gradlew build
-
-      # Step 5: Run the application
-      - name: Run the application
-        run: ./gradlew run
-
-      # Step 6: Upload test reports (if any are generated)
-      - name: Upload test reports
-        uses: actions/upload-artifact@v4
-        if: always() # This ensures reports are uploaded even if tests fail
-        with:
-          name: test-reports
-          path: "**/build/reports/tests/"
+      - uses: actions/checkout@v3
+      - name: Run Kotlin script
+        run: kotlin main.kts

@@ -2,9 +2,3 @@
 fun main() {
     println("Hello, World!")
 }
-
-
-fun main() {
-    var name: string = "nate"
-    println("Hello, World!")
-}

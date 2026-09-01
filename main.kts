@@ -19,10 +19,19 @@ fun variables() {
     val vals: String = "val"
     println(vals)
     
-    //
+    //using a $ you can use a variables in a string
     val variables = "this is"
     println("$variables variables")
 }
+
+
+
+//set a parameter it like a var but when you run the fun command you put fun name(parameter = "string")
+fun parameter(hello:String) {
+    val msg = "$hello name"
+    println(msg)
+}
+
 
 
 

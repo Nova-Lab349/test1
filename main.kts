@@ -33,8 +33,9 @@ fun parameter(hello:String) {
 }
 
 
-
-
+//
+fun parametertwo(hello:String) = println("$hello $name")
+}
 
 
 
@@ -73,5 +74,7 @@ fun main() {
     // will run the commands in fun valandvar
     variables()
     IfAndElse()
+    parameter(hello = hi)
+    parametertwo(hello = hey)
     
 }

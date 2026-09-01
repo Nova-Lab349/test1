@@ -21,7 +21,7 @@ fun variables() {
     
     //
     val variables = "this is"
-    println("$variable variables")
+    println("$variables variables")
 }
 
 

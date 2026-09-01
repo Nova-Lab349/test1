@@ -18,6 +18,10 @@ fun variables() {
     //A variable that cannot be changed during the process
     val vals: String = "val"
     println(vals)
+    
+    //
+    val variables = "this is"
+    println("$variable variables")
 }
 
 
